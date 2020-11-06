@@ -2,6 +2,7 @@ const { src, dest, task, series } = require('gulp');
 const posthtml = require('gulp-posthtml');
 const posthtmlInlineAssets = require('posthtml-inline-assets');
 const inlineFonts = require('gulp-inline-fonts');
+const inlineimage = require('gulp-inline-image');
 
 let inline_fonts1 = function () {
   return src(['src/assets/fonts/IBMPlexMonoRegular.woff'])
@@ -27,6 +28,12 @@ let inline_fonts4 = function () {
     .pipe(dest('generated-fonts'));
 };
 
+let inline_imgs = function () {
+  return src('./css/*.css')
+    .pipe(inlineimage())
+    .pipe(dest('generated-images'));
+}
+
 let inline_js_css = function () {
   return src('src/*.html')
     .pipe(
@@ -44,5 +51,6 @@ exports.default = series(
   inline_fonts2,
   inline_fonts3,
   inline_fonts4,
+  inline_imgs,
   inline_js_css
 );
