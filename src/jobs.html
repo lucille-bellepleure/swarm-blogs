@@ -40,8 +40,7 @@
 
   <script>
     function getHTML() {
-      alert("yes this already works")
-      console.log(document.getElementsByTagName("HTML")[0])
+      console.log(document.getElementsByTagName("HTML")[0].outerHTML)
     }
   </script>
 
@@ -83,8 +82,8 @@
             very ambitious vision: the future of decentralised storage and communication.
           </h4>
           <div class="spacer"></div>
-          <div class="more btn btn-orange"> <a class="nav-link" href="" onclick="getHTML()"><span
-                class="navlink">register</span></a></div>
+          <div class="more btn btn-orange"> <a class="nav-link" href="" onclick="getHTML()"><span class="navlink">save
+                to swarm</span></a></div>
         </div>
 
       </div>
