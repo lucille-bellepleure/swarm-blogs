@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Ethereum Swarm Jobs</title>
+  <title>Ethereum Swarm BlogWorm</title>
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,25 +24,56 @@
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="96x96" href="images/favicon/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
-  <link rel="manifest" href="/images/favicon/manifest.json">
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="images/favicon/ms-icon-144x144.png">
   <meta name="theme-color" content="#ffffff">
 
   <link rel="shortcut icon" href="images/favicon/favicon-16x16.png" type="image/x-icon">
 
-  <title>Swarm Jobs</title>
+  <title>Swarm</title>
 
   <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/fontawesome/css/font-awesome.min.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="assets/slick/slick.css" />
   <link href="jobs.css" rel="stylesheet">
-  <link rel="stylesheet" href="WorkSansRegular.css">
+  <link rel="stylesheet" href="../generated-fonts/IBMPlexMonoRegular.css">
+  <link rel="stylesheet" href="../generated-fonts/IBMPlexMono500.css">
+  <link rel="stylesheet" href="../generated-fonts/IBMPlexMono600.css">
+  <link rel="stylesheet" href="../generated-fonts/WorkSans500.css">
 
 
   <script>
-    function getHTML() {
-      console.log(document.getElementsByTagName("HTML")[0].outerHTML)
+    async function getHTML() {
+
+
+      let gateway = "https://gateway.ethswarm.org";
+
+      let newDate = "UPDATED " + new moment().format('DD.MM.YYYY HH:MM Z')
+
+      let updateField = document.getElementById('time')
+
+      updateField.innerHTML = newDate
+
+      let html2Save = document.getElementsByTagName("HTML")[0].outerHTML;
+
+      document.getElementById('button').remove()
+
+
+
+      let formData = new FormData();
+      formData.append('index.html', html2Save);
+      let response = await axios.post(gateway + '/files', formData, {
+        headers: {
+          'Content-Type': 'text/html'
+        }
+      });
+
+      setTimeout(function () {
+        window.location.href = "https://gateway.ethswarm.org/files/" + response.data.reference;
+      }, 1000)
+
+
+
     }
   </script>
 
@@ -72,11 +103,11 @@
     <section id="section-what">
       <div class="container">
         <div class="section-content">
-          <h5 class="question" id="question-what" contenteditable="true">
+          <h5 class="question" id="time" contenteditable="true">
             UPDATED 06.11.2020 18:00 CET
           </h5>
           <h2 class="answer" contenteditable="true">
-            Create the future of decentralised storage and communication, be part of an amazingly talented
+            Creating the future of decentralised storage and communication, be part of an amazingly talented
             team.
           </h2>
           <h4 class="subtext" contenteditable="true">
@@ -84,8 +115,8 @@
             very ambitious vision: the future of decentralised storage and communication.
           </h4>
           <div class="spacer"></div>
-          <div class="more btn btn-orange"> <a class="nav-link" href="" onclick="getHTML()"><span class="navlink">save
-                to swarm</span></a></div>
+          <div id="button" class="btn btn-orange" onclick="getHTML()">publish
+            to swarm</div>
         </div>
 
       </div>
@@ -122,6 +153,9 @@
     </div>
   </footer>
   <!--FOOTER END-->
+  <script src="assets/axios.min.js"></script>
+  <script src="assets/moment.min.js"></script>
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="assets/bootstrap/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="assets/slick/slick.min.js"></script>

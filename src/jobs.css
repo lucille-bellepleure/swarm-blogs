@@ -1,7 +1,22 @@
 
 @font-face {
-  font-family: "WorkSansRegular";
-  src: url(assets/fonts/WorkSansRegular.woff) format('woff');
+  font-family: "WorkSans500";
+  src: url(assets/fonts/WorkSans500.woff) format('woff');
+}
+
+@font-face {
+  font-family: "IBMPlexMono500";
+  src: url(assets/fonts/IBMPlexMono500.woff) format('woff');
+}
+
+@font-face {
+  font-family: "IBMPlexMono600";
+  src: url(assets/fonts/IBMPlexMono600.woff) format('woff');
+}
+
+@font-face {
+  font-family: "IBMPlexMonoRegular";
+  src: url(assets/fonts/IBMPlexMonoRegular.woff) format('woff');
 }
 
 :root {
@@ -13,7 +28,7 @@
 
 body {
 	background-color: var(--nearly-white);
-  font-family: "WorkSansRegular";
+  font-family: "WorkSans500";
   color: var(--slight-black);
   font-size: 16px;
   position: relative;
@@ -253,6 +268,8 @@ section .question {
   -o-box-shadow: 0px 1px 2px -1px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 1px 2px -1px rgba(0, 0, 0, 0.5);
   margin-bottom: 50px;
+  color: var(--nearly-white);
+  font-family: "IBMPlexMonoRegular";
 }
 
 .btn-orange .nav-link {
@@ -295,14 +312,13 @@ section#section-when .card {
 
 section h5.question {
   color: #acacac;
-  font-family: "IBMPlexMonoregular";
+  font-family: "IBMPlexMonoRegular";
   font-size: 12px;
   padding-top: 20px;
 }
 
 section h2.answer {
-  font-family: "IBMPlexMonoregular";
-
+  font-family: "IBMPlexMonoRegular";
   font-size: 30px;
   font-weight: 100;
   margin-bottom: 0;
@@ -313,7 +329,7 @@ section h2.answer:not(:first-child) {
 }
 
 section h4.subtext {
-font-weight: 500;  
+  font-family: "WorkSans500";
 font-size: 18px;
   margin: 22px 0 15px;
   line-height: 1.5;
