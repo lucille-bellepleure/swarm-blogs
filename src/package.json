@@ -1,0 +1,11 @@
+{
+  "name": "swarm-website-jobs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "gulp-inline-fonts": "^1.2.1",
+    "gulp-posthtml": "^3.0.5"
+  }
+}
