@@ -1,53 +1,7 @@
 
 @font-face {
-  font-family: "IBMPlexMono500";
-  src: url(assets/fonts/IBMPlexMono500.ttf) format('truetype');
-  font-weight: 500;
-}
-@font-face {
-  font-family: "IBMPlexMono600";
-  src: url(assets/fonts/IBMPlexMono600.ttf) format('truetype');
-  font-weight: 600;
-}
-@font-face {
-  font-family: "IBMPlexMonoregular";
-  src: url(assets/fonts/IBMPlexMonoregular.ttf) format('truetype');
-  font-weight: 300;
-}
-@font-face {
-  font-family: "SourceCodePro-Medium";
-  src: url(assets/fonts/SourceCodePro-Medium.ttf) format('truetype');
-  font-weight: 400;
-}
-@font-face {
-  font-family: "SourceCodePro-Regular";
-  src: url(assets/fonts/SourceCodePro-Regular.ttf) format('truetype');
-  font-weight: 600;
-}
-@font-face {
-  font-family: "SourceCodePro-SemiBold";
-  src: url(assets/fonts/SourceCodePro-SemiBold.ttf) format('truetype');
-  font-weight: 700;
-}
-@font-face {
-  font-family: "SpaceMono-Bold";
-  src: url(assets/fonts/SpaceMono-Bold.ttf) format('truetype');
-  font-weight: 700;
-}
-@font-face {
-  font-family: "SpaceMono-Regular";
-  src: url(assets/fonts/SpaceMono-Regular.ttf) format('truetype');
-  font-weight: 700;
-}
-@font-face {
-  font-family: "WorkSans-Italic-VariableFont_wght";
-  src: url(assets/fonts/WorkSans-Italic-VariableFont_wght.ttf) format('truetype');
-  font-weight: 700;
-}
-@font-face {
-  font-family: "WorkSans-VariableFont_wght";
-  src: url(assets/fonts/WorkSans-VariableFont_wght.ttf) format('truetype');
-  font-weight: 400;
+  font-family: "WorkSansRegular";
+  src: url(assets/fonts/WorkSansRegular.woff) format('woff');
 }
 
 :root {
@@ -59,7 +13,7 @@
 
 body {
 	background-color: var(--nearly-white);
-  font-family: "WorkSans-VariableFont_wght";
+  font-family: "WorkSansRegular";
   color: var(--slight-black);
   font-size: 16px;
   position: relative;
