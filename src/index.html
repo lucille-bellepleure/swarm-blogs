@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Ethereum Swarm BlogWorm</title>
+  <title>Ethereum Swarm</title>
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -35,45 +35,30 @@
   <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/fontawesome/css/font-awesome.min.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="assets/slick/slick.css" />
-  <link href="jobs.css" rel="stylesheet">
+  <link href="swarm.css" rel="stylesheet">
   <link rel="stylesheet" href="../generated-fonts/IBMPlexMonoRegular.css">
   <link rel="stylesheet" href="../generated-fonts/IBMPlexMono500.css">
   <link rel="stylesheet" href="../generated-fonts/IBMPlexMono600.css">
   <link rel="stylesheet" href="../generated-fonts/WorkSans500.css">
+  <link rel="stylesheet" href="../generated-fonts/WorkSansRegular.css">
 
 
   <script>
     async function getHTML() {
-
-
-      let gateway = "https://gateway.ethswarm.org";
-
-      let newDate = "UPDATED " + new moment().format('DD.MM.YYYY HH:MM Z')
-
-      let updateField = document.getElementById('time')
-
-      updateField.innerHTML = newDate
-
+      let gateway = "https://gateway.ethswarm.org/files";
       let html2Save = document.getElementsByTagName("HTML")[0].outerHTML;
-
-      document.getElementById('button').remove()
-
-
-
+      document.getElementById("publishbtn").remove()
       let formData = new FormData();
       formData.append('index.html', html2Save);
-      let response = await axios.post(gateway + '/files', formData, {
+      let response = await axios.post(gateway, formData, {
         headers: {
           'Content-Type': 'text/html'
         }
       });
 
       setTimeout(function () {
-        window.location.href = "https://gateway.ethswarm.org/files/" + response.data.reference;
-      }, 1000)
-
-
-
+        window.location.href = gateway + '/' + response.data.reference;
+      }, 2000)
     }
   </script>
 
@@ -87,6 +72,35 @@
     <nav class="navbar fixed-top navbar-expand-lg navbar-light">
       <div class="container">
         <img class="navbar-brand float-left logo" src="images/swarm-logo.svg">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"><img src="images/img_menu_icon.png" /></span>
+
+
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#section-what"><span class="navlink">What</span> <span
+                  class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#section-why"><span class="navlink">Why</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#section-how"><span class="navlink">How</span></a>
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link" href="#section-grants"><span class="navlink">Grants</span></a>
+            </li> -->
+            <li class="nav-item">
+              <a class="nav-link" href="#section-jobs"><span class="navlink">Jobs</span></a>
+            </li>
+          </ul>
+        </div>
+
       </div>
     </nav>
   </header>
@@ -96,90 +110,209 @@
   <!--BODY START-->
   <div id="body-wrap">
 
-    <!-- ===========================
-              EVENT SECTION START
-        =========================== -->
 
-    <section id="section-what">
+    <section class="section-orange">
       <div class="container">
         <div class="section-content">
-          <h5 class="question" id="time" contenteditable="true">
-            UPDATED 06.11.2020 18:00 CET
+          <h5>
+            NEXT UP:
           </h5>
-          <h2 class="answer" contenteditable="true">
-            Creating the future of decentralised storage and communication, be part of an amazingly talented
-            team.
+          <h2>
+            Swarm Live Release event
           </h2>
-          <h4 class="subtext" contenteditable="true">
-            Working with Swarm is like working in the near future. An open, flat and transparent team is working on a
-            very ambitious vision: the future of decentralised storage and communication.
-          </h4>
-          <div class="spacer"></div>
-          <div id="button" class="btn btn-orange" onclick="getHTML()">publish
-            to swarm</div>
-        </div>
+          <h4>Swarm is happy to announce another milestone on the roadmap: Swarm Live. This will be celebrated with
+            another online event. <b>November 24th, 14:00 CEST</b>, Swarm will present the Live release.</h4>
+          <p>
+            <a class="more" href="https://swarm-gateways.net/bzz:/live.swarm.eth" target="_blank">
+              > register to receive the exclusive NFT
+            </a>
+          </p>
 
+        </div>
       </div>
     </section>
-    <div id="img-what">
+
+    <section class="section-light" id="section-what">
+      <div class="container">
+        <div class="section-content">
+          <h5>
+            WHAT IS SWARM?
+          </h5>
+          <h2>
+            Swarm is a decentralised storage and communication system for a sovereign digital society.
+          </h2>
+          <h4>
+            Swarm is a system of peer-to-peer networked nodes that create a decentralised storage and communication
+            service. The system is economically self-sustaining due to a built-in incentive system enforced through
+            smart contracts on the Ethereum blockchain.
+          </h4>
+          <p>
+            <a class="more" data-toggle="collapse" href="#light-section-more" moretext="tell me more">
+              tell me more
+            </a>
+          </p>
+          <div class="collapse" id="light-section-more">
+            <p>Redundancy makes the system resilient to connectivity issues, node churn or targeted ddos attacks and
+              enables a zero-downtime service.
+              Users remain sovereign owners of their personal data in alignment with fair data principles. </p>
+
+            <p>Shifting the cost of access, hosting and execution to users removes the last obstacle to truly agile
+              and adaptive application development.</p>
+
+            <div class="spacer"></div>
+
+            <div class="more btn btn-orange">
+              <a class="nav-link" href="#question-who">
+                <span class="navlink">read the book of swarm</span>
+              </a>
+            </div>
+
+          </div>
+          <div class="spacer"></div>
+
+          <!-- <div class="more btn btn-orange">
+            <a class="nav-link" href="#question-who">
+              <span class="navlink">read the book of swarm</span>
+            </a>
+          </div> -->
+
+        </div>
+      </div>
+    </section>
+
+    <div class="section-img">
       <img src="images/img_section_whatis.png" />
     </div>
 
-    <section id="section-who">
-      <div class="section-spacer"></div>
-      <div class="container who">
-        <div class="section-content">
-          <h5 class="question" id="question-who">
-            REGISTRATION
+    <section class="section-dark" id="section-why">
+      <div class="container">
+        <div class="section-content section-right">
+          <h5>
+            WHY SWARM?
           </h5>
-          <h2 class="answer">
-            Register for the event, get an exclusive NFT.
+          <h2>
+            Swarm exists so the internet can again be decentralised.
           </h2>
-          <h4 class="subtext">
-            Before the event you will receive the links to the videostream. You'll also get updates on the programme.
-            After the event, you will receive the unique NFT, minted for this special occasion.
+          <h4>
+            Swarm’s longer term vision is to become the operating system of the re-decentralised internet. It provides a
+            scalable and self-sustaining infrastructure for a supply-chain economy of data.
           </h4>
-
-          <!-- Begin Mailchimp Signup Form -->
-
-          <div id="mc_embed_signup" class="card card-body spacer">
-            <form
-              action="https://ethereum.us3.list-manage.com/subscribe/post?u=a934c7bf035df0976c90976cd&amp;id=97e0155aad"
-              method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate"
-              target="_blank" novalidate>
-              <div id="mc_embed_signup_scroll">
-                <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
-                <div class="mc-field-group spacer">
-                  <label for="mce-EMAIL">Your Email Address <span class="asterisk">*</span>
-                  </label>
-                  <input type="email" placeholder="my@email.com" value="" name="EMAIL"
-                    class="required email form-control" id="mce-EMAIL">
-                </div>
-                <div class="mc-field-group">
-                  <label for="mce-MMERGE2">Your Ethereum Address </label>
-                  <input type="text" value="" placeholder="0x..." name="MMERGE2" class="form-control" id="mce-MMERGE2">
-                </div>
-                <div id="mce-responses" class="clear">
-                  <div class="response spacer" id="mce-error-response" style="display:none"></div>
-                  <div class="response spacer" id="mce-success-response" style="display:none"></div>
-                </div>
-                <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text"
-                    name="b_a934c7bf035df0976c90976cd_97e0155aad" tabindex="-1" value=""></div>
-                <div class="clear"><input type="submit" value="register" name="subscribe" id="mc-embedded-subscribe"
-                    class="btn btn-blue"></div>
-              </div>
-            </form>
+          <p>
+            <a class="more" data-toggle="collapse" href="#dark-section-more" moretext="tell me more">
+              tell me more
+            </a>
+          </p>
+          <div class="collapse" id="dark-section-more">
+            <p>The Internet is no longer just a niche where geeks play. It has become a fundamental conduit of value
+              creation and a huge share of overall economic activity. Yet the data economy in it’s current state is far
+              from fair, the distribution of the spoils is under the control of those who control the data - mostly
+              companies keeping the data to themselves in isolated data silos. To achieve the goal of a fair data
+              economy many social, legal and technological issues will have to be tackled.
           </div>
-          <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
-          <script
-            type='text/javascript'>(function ($) { window.fnames = new Array(); window.ftypes = new Array(); fnames[0] = 'EMAIL'; ftypes[0] = 'email'; fnames[2] = 'MMERGE2'; ftypes[2] = 'text'; }(jQuery)); var $mcj = jQuery.noConflict(true);</script>
-
-          <!--End mc_embed_signup-->
+          <div class="spacer"></div>
+          <!-- <div class="more btn btn-orange">
+            <a class="nav-link" href="#question-who">
+              <span class="navlink">register</span>
+            </a>
+          </div> -->
         </div>
       </div>
     </section>
 
+    <section class="section-orange" id="section-how">
+      <div class="container">
+        <div class="section-content">
+          <h5>
+            How does it work?
+          </h5>
+          <h2>
+            Bee is a Swarm client implemented in Go. It’s the basic
+            building block for the Swarm network.
+          </h2>
+          <h4>
+            Bee is a Swarm client implemented in Go. It’s the basic building block for Swarm Network.
+            Bee provides low level constructs for file storage, feeds, key-value stores and untraceable communication.
+          </h4>
+          <!-- <p>
+            <a class="more" data-toggle="collapse" href="#orange-section-more" moretext="tell me more">
+              tell me more
+            </a>
+          </p>
+          <div class="collapse" id="orange-section-more">
+            <p>Redundancy makes the system resilient to connectivity issues, node churn or targeted ddos attacks and
+              enables a zero-downtime service.
+              Users remain sovereign owners of their personal data in alignment with fair data principles. </p>
+
+            <p>Shifting the cost of access, hosting and execution to users removes the last obstacle to truly agile
+              and adaptive application development.</p>
+          </div> -->
+          <div class="spacer"></div>
+
+          <div class="more btn btn-light">
+            <a class="nav-link" href="https://docs.ethswarm.org/docs" target="_blank">
+              <span class="navlink">run your own bee</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section-light" id="section-jobs">
+      <div class="container">
+        <div class="section-content">
+          <h5>
+            JOBS AT SWARM
+          </h5>
+          <h2>
+            Join the team creating the future of decentralised storage and communication.
+          </h2>
+          <h4>
+            Swarm is made by an international team of visionaries, developers, scientists, sysadmins, operation
+            managers, graphic designers and even international artists. Join the team by applying for a job or contact
+            us.
+          </h4>
+          <div class="spacer"></div>
+
+          <p>
+            <a class="more" href="" target="_blank">
+              Senior Software Engineer
+            </a>
+          </p>
+          <p>
+            <a class="more" href="" target="_blank">
+              Software Engineer
+            </a>
+          </p>
+          <p>
+            <a class="more" href="" target="_blank">
+              Cloud Operations Engineer
+            </a>
+          </p>
+
+          <h4>
+            Feel free to apply with your resume and a personal message via <a class="more"
+              href="mailto:talent@ethswarm.org" target="_blank">talent@ethswarm.org</a>.
+          </h4>
+
+          <!-- <div class="more btn btn-orange">
+            <a class="nav-link" href="#question-who">
+              <span class="navlink">read the book of swarm</span>
+            </a>
+          </div> -->
+
+        </div>
+        <div class="spacer"></div>
+
+        <!-- <div class="more btn btn-orange">
+            <a class="nav-link" href="#question-who">
+              <span class="navlink">read the book of swarm</span>
+            </a>
+          </div> -->
+
+      </div>
+  </div>
+  </section>
   </div>
   <!--BODY END-->
   <!--FOOTER START-->
@@ -193,6 +326,7 @@
             <p><a href="https://swarm-gateways.net/bzz:/latest.bookofswarm.eth/" target="_blank">Book of Swarm</a></p>
             <p><a href="https://ethswarm.org/" target="_blank">EthSwarm.org</a></p>
             <p><a href="https://docs.ethswarm.org/" target="_blank">Bee Documentation</a></p>
+            <p onclick="getHTML()" id="publishbtn">Publish</p>
           </div>
         </div>
         <div class="col-sm-6 text-right">

@@ -23,6 +23,12 @@ let inline_fonts3 = function () {
 };
 
 let inline_fonts4 = function () {
+  return src(['src/assets/fonts/WorkSansRegular.woff'])
+    .pipe(inlineFonts({ name: 'WorkSansRegular' }))
+    .pipe(dest('generated-fonts'));
+};
+
+let inline_fonts5 = function () {
   return src(['src/assets/fonts/WorkSans500.woff'])
     .pipe(inlineFonts({ name: 'WorkSans500' }))
     .pipe(dest('generated-fonts'));
@@ -51,6 +57,7 @@ exports.default = series(
   inline_fonts2,
   inline_fonts3,
   inline_fonts4,
+  inline_fonts5,
   inline_imgs,
   inline_js_css
 );

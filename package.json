@@ -1,5 +1,5 @@
 {
-  "name": "swarm-website-jobs",
+  "name": "swarm-website",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
