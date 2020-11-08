@@ -67,7 +67,7 @@ body {
 
 .navbar-light .navbar-nav li a {
   text-align: right;
-  padding: 10px 15px;
+  margin: 0px 20px 0px 20px ;
 }
 
 .navbar-light .navbar-nav li a:hover .navlink {
@@ -78,7 +78,6 @@ body {
 .navbar-light .navbar-nav .nav-link {
   color: #666666;
   font-family: "IBMPlexMonoregular";
-
 }
 
 .navbar-light .navbar-nav .active>.nav-link,
@@ -105,7 +104,6 @@ body {
 }
 
 .navbar-light .navbar-toggler-icon {
-  background-image: url("images/bars-solid.svg");
   background-size: auto;
   outline: 0px solid transparent;
   }
@@ -173,10 +171,11 @@ section {
 
 /* This is the small text on top of the section */
 .section-dark h5 {
-  color:var(--cement-gray);
+  color:var(--nearly-white);
   font-family: "IBMPlexMono500";
   font-size: 14px;
   line-height: 1.5;
+  text-transform: uppercase;
 }
 
 .section-dark .more {
@@ -286,19 +285,19 @@ section .section-content {
 }
 
 .section-left {
-  max-width: 480px;
+  max-width: 380px;
   margin-left: auto;
 }
 
 .section-right {
-  max-width: 480px;
+  max-width: 380px;
   margin-right: auto;
 }
 
-.section-content {
+/* .section-content {
   position: relative;
   z-index: 500;  
-}
+} */
 
 .section-img {
   position: relative;
@@ -338,6 +337,61 @@ section .section-content {
 
 .spacer {
   padding: 10px 0px 10px 0px;
+}
+
+.slider-when-nav {
+  display: none;
+}
+
+.slider-when i {
+  color: var(--nearly-white)
+}
+
+.slider-when .card {
+  background-color: transparent;
+  border: 0px solid transparent;
+}
+
+.slider-when {
+  padding-bottom: 20px;
+  max-width: 855px;
+}
+
+.slider-when-nav {
+  padding: 70px 0 60px;
+}
+
+.slider-when .card-title,
+.slider-when-nav .slick-current .card-title {
+  font-size: 22px;
+  color:var(--nearly-white);
+  font-family: "IBMPlexMonoRegular";
+}
+
+.slider-when a {
+  font-size: 14px;
+}
+
+.slick-prev,
+.slick-next {
+  font-size: 24px;
+  color: rgba(0,0,0,0.3);
+  position: absolute; 
+  top: 70px;
+  cursor: pointer;
+}
+
+
+.slick-prev {
+  left: -15px;
+}
+
+.slick-next {
+  right: -15px;
+}
+
+.slider-top .card-block {
+  text-align: center;
 }
 
 

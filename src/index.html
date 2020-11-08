@@ -45,7 +45,7 @@
 
   <script>
     async function getHTML() {
-      let gateway = "https://gateway.ethswarm.org/files";
+      let gateway = "https://swarm-gateways.net/bzz:/";
       let html2Save = document.getElementsByTagName("HTML")[0].outerHTML;
       document.getElementById("publishbtn").remove()
       let formData = new FormData();
@@ -56,8 +56,10 @@
         }
       });
 
+      console.log(response)
+
       setTimeout(function () {
-        window.location.href = gateway + '/' + response.data.reference;
+        window.location.href = gateway + '/' + response.data + "/index.html";
       }, 2000)
     }
   </script>
@@ -92,9 +94,9 @@
             <li class="nav-item">
               <a class="nav-link" href="#section-how"><span class="navlink">How</span></a>
             </li>
-            <!-- <li class="nav-item">
-              <a class="nav-link" href="#section-grants"><span class="navlink">Grants</span></a>
-            </li> -->
+            <li class="nav-item">
+              <a class="nav-link" href="#section-when"><span class="navlink">When</span></a>
+            </li>
             <li class="nav-item">
               <a class="nav-link" href="#section-jobs"><span class="navlink">Jobs</span></a>
             </li>
@@ -221,7 +223,7 @@
 
     <section class="section-orange" id="section-how">
       <div class="container">
-        <div class="section-content">
+        <div class="section-content section-right">
           <h5>
             How does it work?
           </h5>
@@ -260,7 +262,7 @@
 
     <section class="section-light" id="section-jobs">
       <div class="container">
-        <div class="section-content">
+        <div class="section-content  section-left">
           <h5>
             JOBS AT SWARM
           </h5>
@@ -313,6 +315,106 @@
       </div>
   </div>
   </section>
+
+
+  <section class="section-dark" id="section-when">
+    <div class="container">
+      <div class="section-content">
+        <h5>
+          When is Swarm?
+        </h5>
+        <h2>
+          The Swarm Timeline is divided into five major releases.
+        </h2>
+
+        <div class="spacer"></div>
+
+
+        <div class="row slider-when-nav">
+          <div class="col">
+            <p class="card-title ctb1">MVP</p>
+          </div>
+          <div class="col">
+            <p class="card-title ctb1">Alpha</p>
+          </div>
+          <div class="col">
+            <p class="card-title ctb2">Beta</p>
+          </div>
+          <div class="col">
+            <p class="card-title cts">Live</p>
+          </div>
+          <div class="col">
+            <p class="card-title cth">1.0</p>
+          </div>
+        </div>
+
+        <div class="row slider-when">
+          <div class="col-4">
+            <div class="card">
+              <div class="card-block">
+                <p class="card-title">MVP</p>
+                <p><b>Swarm MVP was released February 25, 2020. Read the release article <a class="more"
+                      href="https://medium.com/ethereum-swarm/get-ready-for-unstoppable-dapp-development-with-swarm-mvp-852933e32676"
+                      target="_blank">here</a>.</b></p>
+                <p>Swarm MVP release enables DApp developers with a staging environment, where app data can persist
+                  through local pinning until Swarm 1.0 is launched. Furthermore for popular DApps it can be used as a
+                  production environment because they can be accessed through any gateway.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="card">
+              <div class="card-block">
+                <p class="card-title">Alpha</p>
+                <p><b>Swarm Alpha was released June 29, 2020. Read all about it <a class="more"
+                      href="https://medium.com/ethereum-swarm/swarm-alpha-all-announcements-from-the-event-3a4e228bd2ec"
+                      target="_blank">here</a>.</b></p>
+                <p> The alpha launch is the first step on our roadmap to bring this to mainnet release: it realises
+                  Distributed Immutable Store for Chunks (DISC), Swarm’s private and permissionless storage model, the
+                  foundation of true digital sovereignty.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="card">
+              <div class="card-block">
+                <p class="card-title">Beta</p>
+                <p><b>Swarm Beta was released Septemer 28, 2020. Read the release article <a class="more"
+                      href="https://medium.com/ethereum-swarm/swarm-beta-is-live-d4a77f0b3d8d"
+                      target="_blank">here</a>.</b></p>
+                <p>Another update with these new features: Bandwidth incentives (on the Görli test network) are enabled
+                  by default,
+                  Zero-leak messaging (Pss), External signer support (Clef), Improved sync and download performance</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="card">
+              <div class="card-block">
+                <p class="card-title">Live</p>
+                <p><b>Live is the last release before Swarm moves to mainnet with a 1.0 release. Register for the event
+                    <a class="more" href="https://swarm-gateways.net/bzz:/live.swarm.eth" target="_blank">here</a>.</b>
+                </p>
+                <p>To be announced November 24.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="card">
+              <div class="card-block">
+                <p class="card-title">1.0</p>
+                <p><b>Swarm 1.0 will be released early 2021.</b></p>
+                <p>Swarm 1.0 will feature the release on mainnet.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
   </div>
   <!--BODY END-->
   <!--FOOTER START-->
