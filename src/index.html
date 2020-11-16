@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Ethereum Swarm</title>
+  <title>Swarm</title>
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -30,8 +30,6 @@
 
   <link rel="shortcut icon" href="images/favicon/favicon-16x16.png" type="image/x-icon">
 
-  <title>Swarm</title>
-
   <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/fontawesome/css/font-awesome.min.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="assets/slick/slick.css" />
@@ -41,28 +39,7 @@
   <link rel="stylesheet" href="../generated-fonts/IBMPlexMono600.css">
   <link rel="stylesheet" href="../generated-fonts/WorkSans500.css">
   <link rel="stylesheet" href="../generated-fonts/WorkSansRegular.css">
-
-
-  <script>
-    async function getHTML() {
-      let gateway = "https://swarm-gateways.net/bzz:/";
-      let html2Save = document.getElementsByTagName("HTML")[0].outerHTML;
-      document.getElementById("publishbtn").remove()
-      let formData = new FormData();
-      formData.append('index.html', html2Save);
-      let response = await axios.post(gateway, formData, {
-        headers: {
-          'Content-Type': 'text/html'
-        }
-      });
-
-      console.log(response)
-
-      setTimeout(function () {
-        window.location.href = gateway + '/' + response.data + "/index.html";
-      }, 2000)
-    }
-  </script>
+  <link rel="stylesheet" href="../generated-fonts/FontAwesome.css">
 
 </head>
 
@@ -76,7 +53,7 @@
         <img class="navbar-brand float-left logo" src="images/swarm-logo.svg">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"><img src="images/img_menu_icon.png" /></span>
+          <span class="navbar-toggler-icon"></span>
 
 
         </button>
@@ -111,8 +88,6 @@
 
   <!--BODY START-->
   <div id="body-wrap">
-
-
     <section class="section-orange">
       <div class="container">
         <div class="section-content">
@@ -129,7 +104,6 @@
               > register to receive the exclusive NFT
             </a>
           </p>
-
         </div>
       </div>
     </section>
@@ -171,24 +145,14 @@
 
           </div>
           <div class="spacer"></div>
-
-          <!-- <div class="more btn btn-orange">
-            <a class="nav-link" href="#question-who">
-              <span class="navlink">read the book of swarm</span>
-            </a>
-          </div> -->
-
         </div>
       </div>
     </section>
 
-    <div class="section-img">
-      <img src="images/img_section_whatis.png" />
-    </div>
 
     <section class="section-dark" id="section-why">
       <div class="container">
-        <div class="section-content section-right">
+        <div class="section-content section-left">
           <h5>
             WHY SWARM?
           </h5>
@@ -235,6 +199,7 @@
             Bee is a Swarm client implemented in Go. It’s the basic building block for Swarm Network.
             Bee provides low level constructs for file storage, feeds, key-value stores and untraceable communication.
           </h4>
+          <h4>Bee will happily fly on MacOS, Windows and various Linux flavors.</h4>
           <!-- <p>
             <a class="more" data-toggle="collapse" href="#orange-section-more" moretext="tell me more">
               tell me more
@@ -277,17 +242,23 @@
           <div class="spacer"></div>
 
           <p>
-            <a class="more" href="" target="_blank">
-              Senior Software Engineer
+            <a class="more"
+              href="https://swarm-gateways.net/bzz:/a12043da4c1342887ba90a232757d15c8393d82276560ab8d3bea6219c8cd0d5/index.html"
+              target="_blank">
+              Senior Go Developer - Core Team
             </a>
           </p>
           <p>
-            <a class="more" href="" target="_blank">
-              Software Engineer
+            <a class="more"
+              href="https://swarm-gateways.net/bzz:/7a93476a87f4746a89e59059b5ebe50d4b5500fb9ea4ccff6b60006c7aea2b7c/index.html"
+              target="_blank">
+              Go Developer - Infrastructure Team
             </a>
           </p>
           <p>
-            <a class="more" href="" target="_blank">
+            <a class="more"
+              href="https://swarm-gateways.net/bzz:/d61254ce08341096d543041eed10d23cd3f019ae5295406bb73a3951f368e0ac/index.html"
+              target="_blank">
               Cloud Operations Engineer
             </a>
           </p>
@@ -426,9 +397,7 @@
           <div class="footerlinks">
             <p><a href="https://gateway.ethswarm.org" target="_blank">Swarm Gateway</a></p>
             <p><a href="https://swarm-gateways.net/bzz:/latest.bookofswarm.eth/" target="_blank">Book of Swarm</a></p>
-            <p><a href="https://ethswarm.org/" target="_blank">EthSwarm.org</a></p>
             <p><a href="https://docs.ethswarm.org/" target="_blank">Bee Documentation</a></p>
-            <p onclick="getHTML()" id="publishbtn">Publish</p>
           </div>
         </div>
         <div class="col-sm-6 text-right">
@@ -447,8 +416,6 @@
     </div>
   </footer>
   <!--FOOTER END-->
-  <script src="assets/axios.min.js"></script>
-  <script src="assets/moment.min.js"></script>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="assets/bootstrap/js/bootstrap.min.js"></script>

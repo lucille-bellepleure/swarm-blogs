@@ -34,6 +34,12 @@ let inline_fonts5 = function () {
     .pipe(dest('generated-fonts'));
 };
 
+let inline_fonts6 = function () {
+  return src(['src/assets/fontawesome/fonts/fontawesome-webfont.woff'])
+    .pipe(inlineFonts({ name: 'FontAwesome' }))
+    .pipe(dest('generated-fonts'));
+};
+
 let inline_imgs = function () {
   return src('./css/*.css')
     .pipe(inlineimage())
@@ -58,6 +64,7 @@ exports.default = series(
   inline_fonts3,
   inline_fonts4,
   inline_fonts5,
+  inline_fonts6,
   inline_imgs,
   inline_js_css
 );
